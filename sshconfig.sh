@@ -1,10 +1,9 @@
 #!/bin/bash
 
 prefix=10.1.0.
-start=104
-end=114
-#special=10.1.2.115
-master=154
+start=150
+end=155
+#special=10.2.1.121
 
 read -p "Input the LDAP username on servers: " user
 echo $user

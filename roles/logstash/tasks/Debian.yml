@@ -10,7 +10,7 @@
     - "{{ url_logstash_pkg }}"
     - "{{ url_elasticsearch_pkg }}"
 
-- name: Ensure openjdk, logstash, redis-server, elasticsearch, apache2 and python-passlib are installed
+- name: Ensure openjdk, logstash, redis-server, elasticsearch and apache2 are installed
   apt: pkg={{ item }} state=installed
   with_items:
     - openjdk-7-jre
@@ -18,7 +18,6 @@
     - redis-server
     - elasticsearch
     - apache2
-    - python-passlib
 
 - name: Ensure config files for logstash and elasticsearch are in place
   copy: src={{ item.src }}

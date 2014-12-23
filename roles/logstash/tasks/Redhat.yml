@@ -30,7 +30,7 @@
   yum:  pkg={{ item }} state=installed
   with_items:
     - java-1.7.0-openjdk
-    - logstash
+#    - logstash
     - redis
     - elasticsearch
     - httpd
@@ -75,15 +75,15 @@
     state=present
     line='elasticsearch: "{{ elasticsearch_URL }}:{{ elasticsearch_port }}",'
 
-- name: Open 80 port on iptables
-  command: iptables -I INPUT -p tcp --dport 80 -j ACCEPT
-  notify:
-    - restart iptables
+#- name: Open 80 port on iptables
+#  command: iptables -I INPUT -p tcp --dport 80 -j ACCEPT
+#  notify:
+#    - restart iptables
 
-- name: save iptables
-  command: iptables-save
-  notify:
-    - restart iptables
+#- name: save iptables
+#  command: iptables-save
+#  notify:
+#    - restart iptables
 
 #- name: debug variables
 #  debug: msg="variable concatication = {{ kibana_doc_root }}/{{ kibana_version }}/{{ kibana_config_file }}"
